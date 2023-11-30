@@ -1,8 +1,8 @@
 {
-  "name": "cybervarius",
+  "name": "8studio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://grmnche.github.io/cybervarius",
+  "homepage": "https://grmnche.github.io/8studio",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
@@ -74,16 +74,20 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "axios": "^1.3.4",
+    "formik": "^2.4.5",
     "gh-pages": "^5.0.0",
     "jquery": "^3.7.0",
     "normalize.css": "^8.0.1",
     "postcss-loader": "^7.3.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-background-noise": "^0.1.6",
     "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.8",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.3.2"
   }
 }

@@ -1,38 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
-import { Home } from './pages/Home.jsx';
-import { LibAuthors } from './pages/LibAuthors.jsx';
-import { About } from './pages/About.jsx';
-import { BookAuthors } from './pages/BookAuthors.jsx';
-import { BookStoreChernyshev } from './pages/chernyshev/BookStoreChernyshev.jsx';
-import { LibChernyshev } from './pages/chernyshev/LibChernyshev.jsx';
-import { LibHolmov } from './pages/holmov/LibHolmov.jsx';
-import { BookStoreHolmov } from './pages/holmov/BookStoreHolmov.jsx';
-import Footer from './components/Footer.jsx';
+import React, { useState } from 'react';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
+import Film from './pages/Film';
+import Photo from './pages/Photo';
+import Home from './pages/Home';
+import About from './pages/About';
+
+import FollowCursor from './components/Animation/FollowCursor';
+import NoiseAnimation from './components/Animation/NoiseAnimation';
+import Rain from './components/Animation/Rain';
+
+import { AnimationContext } from './contexts/AnimationContext.jsx';
+
+import './images/logo.svg';
 
 function App() {
-  
+  const [isRainControlActive, setIsRainControlActive] = useState(false);
+
+  const handleRainControl = () => {
+    setIsRainControlActive((prevState) => !prevState);
+  };
 
   return (
     <HashRouter>
-      <div className='App'>
-        <Routes>
-          <Route path={'/'} exact Component={Home} />
-          <Route path={'/libAuthors'} Component={LibAuthors} />
-          <Route path={'/booksAuthors'} Component={BookAuthors} />
-          <Route path={'/about'} Component={About} />
+      <AnimationContext.Provider
+        value={{ handleRainControl, isRainControlActive }}
+      >
+        <div className="App">
+          {isRainControlActive && <Rain />}
+          <FollowCursor />
+          <NoiseAnimation />
 
-          <Route path={'/booksChernyshev'} exact Component={BookStoreChernyshev} />
-          <Route path={'/booksHolmov'} exact Component={BookStoreHolmov} />
-
-          <Route path={'/libChernyshev'} exact Component={LibChernyshev} />
-          <Route path={'/libHolmov'} exact Component={LibHolmov} />
-        </Routes>
-
-      <Footer />
-
-      </div>
+          <Routes>
+            <Route path={'/'} exact Component={Home} />
+            <Route path={'/photo'} Component={Photo} />
+            <Route path={'/film'} Component={Film} />
+            <Route path={'/about'} Component={About} />
+          </Routes>
+        </div>
+      </AnimationContext.Provider>
     </HashRouter>
   );
 }
