@@ -1,0 +1,74 @@
+.about-container {
+  z-index: 100;
+
+  &::-webkit-scrollbar {
+    height: 0px;
+  }
+}
+
+.about-text {
+  white-space: normal;
+  font-weight: 300;
+  opacity: $main-opacity;
+  color: $text-color;
+  z-index: 1000;
+
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  line-height: 1.5rem;
+}
+
+.social-media {
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.load-script-btn {
+  z-index: 1000;
+
+  height: 6rem;
+  border: 1px solid $main-color;
+  color: $main-color;
+  font-weight: 300;
+
+  text-transform: uppercase;
+  transition: 0.2s;
+
+  &:hover {
+    border: 1px solid transparent;
+    color: #fff;
+  }
+  &:active {
+    opacity: 0.4;
+  }
+  &.hide {
+    opacity: 0;
+  }
+}
+
+.send-script {
+  width: fit-content;
+  height: 6rem;
+  text-transform: uppercase;
+
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  color: #fff;
+  opacity: $main-opacity;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.arrow {
+  width: 2rem;
+  margin-left: 1rem;
+}
+
+hr {
+  opacity: $main-opacity;
+}

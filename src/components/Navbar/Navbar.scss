@@ -1,0 +1,139 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.nav-list {
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1rem, 4vw, 5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  width: 100%;
+
+  min-width: 5.825rem;
+  min-height: 5.825rem;
+
+  transform: scaleX(0.65);
+  z-index: -1;
+}
+
+#infinity {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 44.95vw;
+  height: 18vh;
+  min-height: 19rem;
+  min-width: 14.04rem;
+  z-index: 100;
+}
+
+#infinity-photo,
+#infinity-film {
+  position: absolute;
+  min-width: 42.5%;
+  min-height: 31.5%;
+
+  width: 19.65vw;
+  height: 18.65vw;
+
+  cursor: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#infinity-photo {
+  right: 0;
+}
+
+#infinity-film {
+  left: 0;
+}
+
+#infinity-photo::after,
+#infinity-film::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18.65vw;
+  height: 18.65vw;
+
+  min-width: 5.825rem;
+  min-height: 5.825rem;
+
+  border: 1px solid $text-color;
+  -moz-border-radius: 50% 50% 0 50%;
+  border-radius: 50% 50% 0 50%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+
+  cursor: none;
+}
+
+#infinity-photo:after {
+  content: '';
+  left: auto;
+  right: 0;
+  -moz-border-radius: 50% 50% 50% 0;
+  border-radius: 50% 50% 50% 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#infinity-photo:hover::after,
+#infinity-film:hover::before {
+  box-shadow: inset 0 0 10px #ffffff77, 0 0 10px #ffffff77;
+  border: 2.5px solid #b7b7b7;
+}
+
+#infinity-film:hover #infinity-film.ripple,
+#infinity-photo:hover #infinity-photo.ripple {
+  transform: scale(1);
+  opacity: 1;
+  display: block !important;
+}
+
+.about-us {
+  cursor: none;
+  text-transform: uppercase;
+  z-index: 1000;
+  color: $main-color;
+  opacity: $main-opacity;
+  transition: 0.3s;
+  transform: scaleX(0.65);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

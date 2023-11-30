@@ -1,0 +1,14 @@
+.photos {
+  align-items: center;
+  white-space: nowrap;
+  z-index: 100;
+
+  &::-webkit-scrollbar {
+    height: 0px;
+  }
+
+  .photo {
+    height: 40rem;
+    pointer-events: none;
+  }
+}
