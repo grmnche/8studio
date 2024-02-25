@@ -1,7 +1,8 @@
+@import '../../assets/styles/mixins/query';
+@import '../../assets/styles/mixins/flexbox';
+
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexbox(center, center, row, 0);
   height: 100vh;
 }
 
@@ -10,19 +11,16 @@
   width: 50vw;
   height: 100vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexbox(center, center, column, 0);
 
   cursor: pointer;
   transition: 0.3s;
 }
 
 .nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(1rem, 4vw, 5rem);
+  @include flexbox(center, center, row, 0);
+
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 400;
   text-transform: uppercase;
 
@@ -33,22 +31,33 @@
 
   transform: scaleX(0.65);
   z-index: -1;
+
+  @include query(max, tablet) {
+    position: absolute;
+  }
 }
 
 #infinity {
   position: relative;
-  display: flex;
-  align-items: center;
+  @include flexbox(center, center, row, 0);
+
   width: 44.95vw;
   height: 18vh;
   min-height: 19rem;
   min-width: 14.04rem;
   z-index: 100;
+
+  @include query(max, tablet) {
+    @include flexbox(space-between, initial, column, 40px);
+    height: auto;
+  }
 }
 
 #infinity-photo,
 #infinity-film {
   position: absolute;
+  @include flexbox(center, center, row, 0);
+
   min-width: 42.5%;
   min-height: 31.5%;
 
@@ -57,9 +66,14 @@
 
   cursor: none;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include query(max, tablet) {
+    position: static;
+
+    min-width: 30vw;
+    min-height: 30vw;
+
+    @include flexbox(initial, initial, column, 0);
+  }
 }
 
 #infinity-photo {
@@ -76,11 +90,12 @@
   position: absolute;
   top: 0;
   left: 0;
+
   width: 18.65vw;
   height: 18.65vw;
 
-  min-width: 5.825rem;
-  min-height: 5.825rem;
+  min-width: 10rem;
+  min-height: 10rem;
 
   border: 1px solid $text-color;
   -moz-border-radius: 50% 50% 0 50%;
@@ -92,6 +107,12 @@
   transform: rotate(-45deg);
 
   cursor: none;
+
+  @include query(max, tablet) {
+    position: static;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 #infinity-photo:after {
@@ -109,7 +130,7 @@
 
 #infinity-photo:hover::after,
 #infinity-film:hover::before {
-  box-shadow: inset 0 0 10px #ffffff77, 0 0 10px #ffffff77;
+  box-shadow: inset 0 0 10px #ffffff66, 0 0 10px #ffffff66;
   border: 2.5px solid #b7b7b7;
 }
 
@@ -127,7 +148,13 @@
   color: $main-color;
   opacity: $main-opacity;
   transition: 0.3s;
-  transform: scaleX(0.65);
+
+  right: 20px;
+  bottom: 20px;
+
+  p {
+    transform: scaleX(0.65);
+  }
 
   &:hover {
     opacity: 1;

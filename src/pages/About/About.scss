@@ -1,8 +1,48 @@
-.about-container {
+@import '../../assets/styles/mixins/flexbox';
+@import '../../assets/styles/mixins/query';
+
+.about-page {
+  position: relative;
+  @include flexbox(initial, initial, row, 0);
+
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
   z-index: 100;
+
+  @include query(max, tablet) {
+    @include flexbox(initial, initial, column, 100px);
+    margin-bottom: 200px;
+  }
 
   &::-webkit-scrollbar {
     height: 0px;
+  }
+
+  .about-main {
+    @include flexbox(center, center, column, 0);
+    height: 100%;
+    min-width: 100%;
+    margin-top: 40px;
+  }
+
+  .produce-cards {
+    @include flexbox(space-around, initial, row, 40px);
+    width: 80%;
+    margin-bottom: 40px;
+
+    @include query(max, tablet) {
+      @include flexbox(initial, initial, column, 100px);
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    @include query(max, mobile) {
+      gap: 50px;
+    }
   }
 }
 
@@ -12,13 +52,19 @@
   opacity: $main-opacity;
   color: $text-color;
   z-index: 1000;
-
+  width: 80%;
   font-size: clamp(1rem, 4vw, 1.5rem);
   line-height: 1.5rem;
+
+  @include query(max, tablet) {
+    margin: 100px auto 0;
+    width: 100%;
+  }
 }
 
 .social-media {
   transition: 0.3s;
+
   &:hover {
     opacity: 0.7;
   }
@@ -31,20 +77,38 @@
   border: 1px solid $main-color;
   color: $main-color;
   font-weight: 300;
+  width: 30%;
 
   text-transform: uppercase;
   transition: 0.2s;
+
+  @include query(max, tablet) {
+    width: 60%;
+  }
+
+  @include query(max, mobile) {
+    width: 100%;
+  }
 
   &:hover {
     border: 1px solid transparent;
     color: #fff;
   }
+
   &:active {
     opacity: 0.4;
   }
+
   &.hide {
     opacity: 0;
   }
+}
+
+.about-footer {
+  position: relative;
+  @include flexbox(center, center, row, 0);
+  min-width: 100%;
+  height: 100%;
 }
 
 .send-script {
@@ -52,12 +116,16 @@
   height: 6rem;
   text-transform: uppercase;
 
-  justify-content: center;
-  align-items: center;
+  @include flexbox(center, center, row, 0);
+
   font-weight: 300;
   color: #fff;
   opacity: $main-opacity;
   transition: 0.3s;
+
+  @include query(max, tablet) {
+    display: none;
+  }
 
   &:hover {
     opacity: 1;

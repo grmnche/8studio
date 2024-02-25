@@ -5,8 +5,8 @@ const Logo = ({className}) => {
   return (
     <NavLink to="/" end>
       <img
-        className={`logo ${className} w-14 lg:w-24 fixed bottom-14 lg:bottom-12 right-4 2xl:right-20`}
-        src="./images/logo.svg"
+        className={`logo ${className} fixed`}
+        src="./images/logo.png"
         alt=""
       />
     </NavLink>

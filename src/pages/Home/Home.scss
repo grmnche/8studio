@@ -1,3 +1,5 @@
+@import '../../assets/styles/mixins/flexbox';
+
 .home {
   position: absolute;
   inset: 0;
@@ -7,4 +9,19 @@
     rgb(58, 58, 58) 33.3%,
     rgb(39, 39, 39) 66.6%
   );
+
+  &__logo {
+  @include flexbox(center, center, row, 0);
+    width: 100%;
+
+    img {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+
+      width: 12vw;
+      min-width: 100px;
+      opacity: $main-opacity;
+    }
+  }
 }

@@ -117,28 +117,21 @@
 
 @media (max-width: 800px) {
   iframe {
-    width: 426px;
-    height: 240px;
+    width: 480px;
+    height: 270px;
   }
 }
 
-@media (max-width: 512px) {
+@media (max-width: 600px) {
   iframe {
-    width: 341px;
-    height: 192px;
+    width: 320px;
+    height: 180px;
   }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 400) {
   iframe {
-    width: 256px;
-    height: 144px;
-  }
-}
-
-@media (max-width: 341px) {
-  iframe {
-    width: 213px;
-    height: 120px;
+    width: 200px;
+    height: 105px;
   }
 }

@@ -5,6 +5,11 @@
 
   transition: 0.2s;
   opacity: $main-opacity;
+  width: 2vw;
+  min-width: 20px;
+
+  left: 20px;
+  bottom: 20px;
 
   span {
     width: 200px;
@@ -16,20 +21,5 @@
 
   &:active {
     opacity: 0.6;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: $main-color;
-
-    bottom: 0;
-    left: 0;
-    -moz-border-radius: 50% 50% 0 50%;
-    border-radius: 50% 50% 0 50%;
-
-    transform: rotate(-135deg);
   }
 }

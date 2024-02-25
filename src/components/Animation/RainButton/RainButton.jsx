@@ -5,10 +5,11 @@ const RainButton = ({className}) => {
   const { handleRainControl } = useContext(AnimationContext);
 
   return (
-    <button
+    <img
       onClick={handleRainControl}
-      className={`rain-btn ${className} fixed bottom-14 left-8 lg:left-20 w-8 lg:w-14 h-8 lg:h-14`}
-    ></button>
+      className={`rain-btn ${className} fixed`}
+      src='./images/drop.png'
+    ></img>
   );
 };
 

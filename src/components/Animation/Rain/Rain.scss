@@ -69,11 +69,11 @@ body.back-row-toggle .back-row-container {
 }
 
 .raindrop-splat {
-  width: 15px;
-  height: 10px;
-  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  width: 12px;
+  height: 8px;
+  border-top: 2px dotted rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  opacity: 0.6;
+  opacity: 0.4;
   transform: scale(0);
   animation: splat 0.6s linear infinite;
   display: none;

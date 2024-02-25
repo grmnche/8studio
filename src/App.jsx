@@ -12,8 +12,6 @@ import Rain from './components/Animation/Rain';
 
 import { AnimationContext } from './contexts/AnimationContext.jsx';
 
-import './images/logo.svg';
-
 function App() {
   const [isRainControlActive, setIsRainControlActive] = useState(false);
 

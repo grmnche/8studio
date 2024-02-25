@@ -1,0 +1,11 @@
+.photo-card {
+  margin-inline: 10px;
+
+  span {
+    height: 100%;
+  }
+
+  @include query(max, tablet) {
+    margin: 0;
+  }
+}

@@ -82,6 +82,9 @@ module.exports = {
   devServer: {
     port: 3111,
     hot: isDev,
+    static: {
+      directory: path.resolve(__dirname, 'src'),
+    }
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -96,6 +99,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/assets/favicon.ico'),
           to: path.resolve('dist'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/assets/images'),
+          to: path.resolve(__dirname, 'dist/images'),
         }
       ],
     }),
@@ -127,7 +134,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
             name: f => {
-                let dirNameInsideAssets = path.relative(path.join(__dirname, 'src'), path.dirname(f));
+                let dirNameInsideAssets = path.relative(path.join(__dirname, 'src/assets'), path.dirname(f));
                 return `${dirNameInsideAssets}/[name].[ext]`;
             }
         }

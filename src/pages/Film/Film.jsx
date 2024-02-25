@@ -1,7 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { films } from '../../components/Films.jsx';
-import '../../images/films/DML.jpg';
-import '../../images/films/puncher.jpg';
 import DescriptionPanel from '../../components/DescriptionPanel.jsx';
 import Logo from '../../components/Logo';
 import RainButton from '../../components/Animation/RainButton';
@@ -77,7 +75,7 @@ const Film = () => {
       <div
         className={`film-preview 2xl:w-full 2xl:h-screen flex justify-center items-center`}
       >
-        <div className="h-full md:h-full mb-20 flex items-center 2xl:flex-row flex-col">
+        <div className="h-full md:h-full flex items-center 2xl:flex-row flex-col">
           <FilmCard
             onClick={handleFilmClick}
             className="film-card my-12 mx-4"

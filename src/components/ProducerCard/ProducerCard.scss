@@ -1,19 +1,59 @@
-.producer-photo {
-  min-width: 13rem;
-  max-width: 60rem;
-  opacity: $main-opacity;
-}
+@import '../../assets/styles/mixins/flexbox';
+@import '../../assets/styles/mixins/query';
 
-.producer-name {
-  text-transform: uppercase;
-  font-weight: 400;
-  opacity: 0.7;
-  transform: scaleX(0.8);
-  color: $main-color;
-  font-size: clamp(1.8rem, 6vw, 4rem);
-  z-index: 1000;
-}
+.producer-card {
+  position: relative;
+  @include flexbox(initial, flex-start, column, 0);
+  min-width: 20rem;
 
-.photo-status-container {
-  height: fit-content;
+  &__photo {
+    height: 100%;
+    width: 100%;
+
+    img {
+      opacity: $main-opacity;
+      max-width: 400px;
+
+      @include query(max, tablet) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  h4 {
+    position: absolute;
+    left: -20px;
+    top: -60px;
+    opacity: 0.7;
+    width: 50%;
+    line-height: 3.5rem;
+    color: $main-color;
+    font-size: 4rem;
+    z-index: 1000;
+
+    @include query(max, tablet) {
+      position: static;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .status {
+    position: absolute;
+    bottom: 100px;
+    right: -130px;
+    min-width: 220px;
+    font-weight: 300;
+
+    text-transform: lowercase;
+    transform: rotate(90deg);
+
+    @include query(max, tablet) {
+      min-width: unset;
+      position: static;
+      transform: none;
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+  }
 }

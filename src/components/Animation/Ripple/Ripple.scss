@@ -1,0 +1,103 @@
+@import '../../../assets/styles/mixins/query';
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.ripple-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  width: 100%;
+  height: 100%;
+}
+
+.ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: ripple 1s linear infinite;
+
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+  background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 1%,
+      transparent 1%
+    ),
+    radial-gradient(circle, transparent 1%, rgba(255, 255, 255, 0.1) 1%),
+    rgba(255, 255, 255, 0.4);
+  background-size: 50px 50px;
+}
+
+@include query(max, tablet) {
+  .ripple {
+    animation: none;
+  }
+}
+
+.ripple.extra-small {
+  width: 1vw;
+  height: 1vw;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+
+  top: 6vw;
+  left: 14vw;
+}
+
+.ripple.small {
+  width: 2vw;
+  height: 2vw;
+  animation-duration: 1.2s;
+  animation-delay: 0.4s;
+
+  top: 6vw;
+  left: 9vw;
+}
+
+.ripple.medium {
+  width: 3vw;
+  height: 3vw;
+  animation-duration: 1.6s;
+  animation-delay: 0.6s;
+
+  top: 4vw;
+  left: 6vw;
+}
+
+.ripple.large {
+  width: 3.5vw;
+  height: 3.5vw;
+  animation-duration: 1.7s;
+  animation-delay: 0.8s;
+
+  top: 10vw;
+  left: 4vw;
+}
+
+.ripple.extra-large {
+  width: 4.5vw;
+  height: 4.5vw;
+  animation-duration: 1.7s;
+  animation-delay: 1s;
+
+  top: 9vw;
+  left: 10vw;
+}
